@@ -1,0 +1,38 @@
+---
+title: "Aula 3 - Select (Parte 1)"
+author: "Zurubabel"
+date: "18 de setembro de 2017"
+output: html_document
+---
+
+```{r setup, results='hide', message=FALSE, warning=FALSE}
+library(dplyr)
+```
+
+# Função "SELECT"
+
+A função `select` é usada para selecionar parte dos dados, tais como colunas e afins.
+
+*Não esqueça* : Você pode acessar a documentação usando a funçao `?select`.
+
+```{r exemplo_1}
+# Função select
+# select(mtcars, mpg)
+
+mtcars %>% select(mpg)
+
+```
+
+```{r exemplo_2}
+# Selecionando as colunas
+
+# mtcars %>%
+  #select(mpg, cyl, disp)
+
+#mtcars %>%
+ # select(c(mpg, cyl, disp))
+
+mtcars %>%
+  select(c(1,3,5))
+
+```
