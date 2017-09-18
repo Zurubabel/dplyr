@@ -1,0 +1,53 @@
+---
+title: "Aula 1 - Pipe"
+author: "Zurubabel"
+date: "17 de setembro de 2017"
+output: html_document
+---
+```{r results='hide', message=FALSE, warning=FALSE}
+#Carregando as bibliotecas necessárias
+library(dplyr)  
+library (ggplot2)
+```
+
+# Operador PIPE %>%
+
+## Operação de transferência
+
+O operador pipe `%>%` é usado para transferir o objeto à esquerda para o primeiro parâmetro da operação à direita.
+
+## Exemplos
+
+```{r exemplo_pipe_transferencia}
+# Operação sem o pipe
+mean(1:20)
+
+# Operação com o pipe
+1:20 %>% mean
+
+```
+
+## Sequência de usos
+
+O pipe `%>%` também pode ser usado para executar funções em sequência.
+
+## Exemplo
+
+```{r exemplo_pipe_sequencia}
+
+# Operação sem o pipe
+mean(subset(mtcars, mpg > 22)$mpg)
+
+# Operação com o pipe
+mtcars %>% filter(mpg > 22) %>% summarize(media_mpg = mean(mpg))
+
+```
+
+```{r}
+# Operação sem o pipe
+ggplot(mtcars, aes(mpg)) + geom_histogram()
+
+# Operação com o pipe
+mtcars %>% ggplot(aes(mpg)) + geom_histogram()
+
+```
