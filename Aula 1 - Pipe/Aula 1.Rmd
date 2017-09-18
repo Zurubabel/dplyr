@@ -5,49 +5,49 @@ date: "17 de setembro de 2017"
 output: html_document
 ---
 ```{r results='hide', message=FALSE, warning=FALSE}
-#Carregando as bibliotecas necessÃ¡rias
+#Carregando as bibliotecas necessárias
 library(dplyr)  
 library (ggplot2)
 ```
 
 # Operador PIPE %>%
 
-## OperaÃ§Ã£o de transferÃªncia
+## Operação de transferência
 
-O operador pipe `%>%` Ã© usado para transferir o objeto Ã  esquerda para o primeiro parÃ¢metro da operaÃ§Ã£o Ã  direita.
+O operador pipe `%>%` é usado para transferir o objeto à esquerda para o primeiro parâmetro da operação à direita.
 
 ## Exemplos
 
 ```{r exemplo_pipe_transferencia}
-# OperaÃ§Ã£o sem o pipe
+# Operação sem o pipe
 mean(1:20)
 
-# OperaÃ§Ã£o com o pipe
+# Operação com o pipe
 1:20 %>% mean
 
 ```
 
-## SequÃªncia de usos
+## Sequência de usos
 
-O pipe `%>%` tambÃ©m pode ser usado para executar funÃ§Ãµes em sequÃªncia.
+O pipe `%>%` também pode ser usado para executar funções em sequência.
 
 ## Exemplo
 
 ```{r exemplo_pipe_sequencia}
 
-# OperaÃ§Ã£o sem o pipe
+# Operação sem o pipe
 mean(subset(mtcars, mpg > 22)$mpg)
 
-# OperaÃ§Ã£o com o pipe
+# Operação com o pipe
 mtcars %>% filter(mpg > 22) %>% summarize(media_mpg = mean(mpg))
 
 ```
 
 ```{r}
-# OperaÃ§Ã£o sem o pipe
+# Operação sem o pipe
 ggplot(mtcars, aes(mpg)) + geom_histogram()
 
-# OperaÃ§Ã£o com o pipe
+# Operação com o pipe
 mtcars %>% ggplot(aes(mpg)) + geom_histogram()
 
 ```

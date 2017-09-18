@@ -1,0 +1,30 @@
+---
+title: "Aula 2 - Percepção do dplyr"
+author: "Zurubabel"
+date: "17 de setembro de 2017"
+output: html_document
+---
+
+```{r setup, results='hide', message=FALSE, warning=FALSE}
+#Importação da biblioteca dplyr
+library(dplyr)
+
+# Obtendo os dados do csv (NÃO ESQUEÇAM DE MUDAR O WORKSPACE USANDO A FUNÇÃO setwd OU NO MENU Session -> Set Working Directory)
+tb_produtos <- read.csv("tabela.csv", header = TRUE, 
+                        sep = ";", encoding = "UTF-8")
+
+```
+# Percepção do dplyr
+
+O funcionamento do dplyr é semelhante ao funcionamento do T-SQL.
+
+## Exemplos
+
+```{r}
+# tb_produtos %>% filter(X.U.FEFF.cdProduto > 10)
+
+# Média
+tb_produtos %>% filter(X.U.FEFF.cdProduto > 10) %>% select(nmProduto) #%>% summarize(mean(vlProduto))
+
+
+```
