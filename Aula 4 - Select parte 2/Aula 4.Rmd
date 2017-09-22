@@ -1,0 +1,52 @@
+---
+title: "Aula 4 - Select Parte 2"
+author: "Zurubabel"
+date: "21 de setembro de 2017"
+output: html_document
+---
+
+# SELECT Parte 2 - Funções de auxílio
+
+```{r setup, results='hide', message=FALSE, warning=FALSE}
+  # Importando a biblioteca dplyr
+  library(dplyr)
+```
+
+## Funções
+
+O `dplyr` possui algumas funções de auxílio para selecionar as colunas. Algumas das funções são:
+
+* `starts_with("x")` - Verifica qual coluna começa com `"x"`
+* `ends_with("x")` - Verifica qual coluna termina com `"x"`
+* `contais("x")` - Verifica qual coluna contém `"x"`
+* `num_range("x", 1:5)` - Verifica as colunas que comecem com `x` e que tenham uma variação entre 1 e 5
+
+## Exemplos:
+```{r}
+  mtcars %>% names
+```
+
+
+```{r}
+
+  #starts_with
+  mtcars %>% select(starts_with("d"))
+
+```
+
+```{r}
+  #ends_with
+  mtcars %>% select(ends_with("l"))
+
+```
+
+```{r}
+  #contais
+  mtcars %>% select(contains("c"))
+
+```
+
+```{r}
+  mtcars %>% select(contains("c"), hp)
+
+```
