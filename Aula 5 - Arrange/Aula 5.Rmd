@@ -1,0 +1,32 @@
+---
+title: "Aula 5 - Arrange"
+author: "Zurubabel"
+date: "21 de setembro de 2017"
+output: html_document
+---
+
+# Aula 5 - Arrange
+
+Com a função `arrange` você consegue ordenar como seus dados retornarão.
+
+```{r setup, results='hide', message=FALSE, warning=FALSE}
+  # Importando a biblioteca dplyr
+  library(dplyr)
+```
+
+Primeiro, vamos deixar claro quais são os tipos de dados e quais os valores (pois minha memória de curto prazo é muito ruim. HUE).
+```{r}
+  mtcars %>% head
+```
+
+Após isso, podemos ordenar os dados de forma ascendente (menor para o maior) utilizando a função `arrange`.
+
+Caso queira que a ordenação seja descentente (maior para o menor), usar a função `desc()` com a coluna como parâmetro.
+
+```{r}
+
+  mtcars %>% arrange(hp)
+  mtcars %>% arrange(desc(hp))
+  # mtcars %>% arrange(hp, wt)
+
+```
